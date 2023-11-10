@@ -11,17 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('institutions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('receiver_id')->nullable();
             $table->foreignId('media_id')->nullable();
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('email')->unique()->nullable();
+            $table->string('name')->nullable();
+            $table->integer('VS_institution')->nullable();
+            $table->string('location')->nullable();
+            $table->text('about')->nullable();
             $table->string('type')->nullable();
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('institutions');
     }
 };
