@@ -1,15 +1,20 @@
 header {
     display: flex;
-    margin: 2em;
-    width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+    margin: 3em;
+    padding: 2em;
+
 
 
     nav{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         text-align: right;
         padding: 2em;
+        gap: 3em;
         
 
         a{
