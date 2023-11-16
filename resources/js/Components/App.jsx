@@ -4,6 +4,7 @@ import MainContent from './MainContent';
 import ReceiversList from './ReceiversList';
 import ReceiverDetail from './ReceiverDetail';
 import InstitutionDetail from './InstitutionDetail';
+import { Route, Routes } from 'react-router';
 
 export default function App() {
   const [receivers, setReceivers] = useState([]);
@@ -32,7 +33,14 @@ export default function App() {
 
   return (
     <>
-      <div>
+    <Routes>
+      <Route path="/" element={ <MainContent/> } />
+      <Route path="/admin/list" element={ <ReceiversList/> } />
+      <Route path="/receiver/{receiver.id}" element={ <ReceiverDetail/> } />
+
+  
+    </Routes>
+      {/* <div>
         <Header />
       </div>
       <div>
@@ -44,7 +52,7 @@ export default function App() {
       <div>
       {selectedReceiver && <ReceiverDetail receiver={selectedReceiver} />}
       {selectedInstitution && <InstitutionDetail institution={selectedInstitution} />}
-      </div>
+      </div> */}
     </>
   );
 }

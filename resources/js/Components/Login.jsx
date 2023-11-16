@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import UserContext from './UserContext';
+import axios from 'axios';
 
 export default function Login(props) {
 
@@ -17,35 +18,26 @@ export default function Login(props) {
         event.preventDefault();
 
         // make the AJAX request
-        const response = await fetch('/login', {
-            method: 'POST',
-            body: JSON.stringify(values),
-            headers: {
-                'Accept': 'application/json',
-                'Content-type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            }
-        });
-
-        // parse the response as JSON
-        const response_data = await response.json();
-
-        // if the response code is not 2xx (success)
-        if (Math.floor(response.status / 100) !== 2) {
-            switch (response.status) {
-                case 422:
-                    // handle validation errors here
-                    console.log('VALIDATION FAILED:', response_data.errors);
-                    setErrors(response_data.errors);
-                    break;
-                default:
-                    console.log('UNKNOWN ERROR', response_data);
-                    break;
-            }
-        } else {
-            // successful login
-            setUser(null); // tell App.jsx to re-fetch the user information
+        
+        try {
+          const response = await axios.post('/login', values );
+          const response_data = await response.json();
+          setUser(null);
         }
+        catch(error){
+          switch (error.response.status) {
+            case 422:
+                // handle validation errors here
+                console.log('VALIDATION FAILED:', error.response.data.errors);
+                setErrors(response_data.errors);
+                break;
+            default:
+                console.log('UNKNOWN ERROR', error.response.data.errors);
+                break;
+        }
+
+      }
+      
     }
 
     const handleChange = (event) => {
