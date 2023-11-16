@@ -3,10 +3,13 @@ import Header from './Header';
 import MainContent from './MainContent';
 import ReceiversList from './ReceiversList';
 import ReceiverDetail from './ReceiverDetail';
+import InstitutionDetail from './InstitutionDetail';
 
 export default function App() {
   const [receivers, setReceivers] = useState([]);
   const [selectedReceiver, setSelectedReceiver] = useState(null);
+  const [selectedInstitution, setSelectedInstitution] = useState(null);
+
 
   useEffect(() => {
     // Fetch receivers from your API
@@ -17,10 +20,15 @@ export default function App() {
       .catch((error) => console.error('Error fetching receivers:', error));
   }, []);
 
+
   const handleReceiverClick = (receiver) => {
     setSelectedReceiver(receiver);
   };
-  console.log('Selected Receiver:', selectedReceiver);
+
+  const handleInstitutionClick = (institution) => {
+    setSelectedInstitution(institution);
+    setSelectedReceiver(null); 
+  };
 
   return (
     <>
@@ -31,10 +39,11 @@ export default function App() {
         <MainContent />
       </div>
       <div>
-        <ReceiversList receivers={receivers} onReceiverClick={handleReceiverClick} />
+        <ReceiversList receivers={receivers} onReceiverClick={handleReceiverClick} onInstitutionClick={handleInstitutionClick} />
       </div>
       <div>
       {selectedReceiver && <ReceiverDetail receiver={selectedReceiver} />}
+      {selectedInstitution && <InstitutionDetail institution={selectedInstitution} />}
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\InstitutionController;
 use App\Http\Controllers\Api\ReceiverController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/receivers', [ReceiverController::class, 'index']);
+
+Route::get('/institutions', [InstitutionController::class, 'index']);

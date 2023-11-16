@@ -1,10 +1,10 @@
 import React from "react";
 
 
-export default function ReceiversList({ receivers, onReceiverClick  }){
+export default function ReceiversList({ receivers, onReceiverClick, onInstitutionClick }){
     return (
         <div>
-      <h2>List of Receivers</h2>
+      <h1>List of Receivers</h1>
       <table>
         <thead>
           <tr>
@@ -17,11 +17,11 @@ export default function ReceiversList({ receivers, onReceiverClick  }){
         </thead>
         <tbody>
           {receivers.map((receiver) => (
-            <tr key={receiver.id} onClick={() => onReceiverClick(receiver)}>
-              <td>{receiver.name}</td>
+            <tr key={receiver.id} >
+              <td onClick={() => onReceiverClick(receiver)}>{receiver.name}</td>
               <td>{receiver.VS_receiver}</td>
               <td>{receiver.user ? receiver.user.first_name : 'N/A'}  {receiver.user ? receiver.user.last_name : 'N/A'}</td>
-              <td>{receiver.institution ? receiver.institution.name : 'N/A'}</td>
+              <td onClick={() => onInstitutionClick(receiver.institution)}>{receiver.institution ? receiver.institution.name : 'N/A'}</td>
               <td>
                 {receiver.media &&
                   receiver.media

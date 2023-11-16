@@ -10,7 +10,7 @@ class ReceiverController extends Controller
 {
     public function index(Request $request)
 {
-    $receivers = Receiver::with('user', 'institution', 'media')->get();
+    $receivers = Receiver::with('user', 'institution', 'institution.media', 'media')->get();
 
     if ($receivers->isEmpty()) {
         return response()->json(['message' => 'No receivers found.'], 404);
