@@ -1,0 +1,55 @@
+ html, body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: sans-serif
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+}
+
+.homepage{
+    width: 100vw;
+    height: 100vw;
+    background: url('../../public/graphic/pozadí\ \(1200\ x\ 600\ px\).jpg');
+    background-color: rgba(126, 133, 110, 0.8);
+    padding: 5em;
+    margin: 0;
+
+    .homepage__text-img{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-image: url('../../public/graphic/symbol-big.png');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .homepage__text{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        h1{
+            color: rgb(188, 17, 17);
+            font-size: 300%;
+            width: 60%;
+        }
+        p{
+            width: 40vw;
+        }
+        }
+        .homepage__img{
+            width: 30em;
+            border-radius: 2em;
+        }
+    }
+    .homepage__login{
+        position: relative;
+        bottom: 5em;
+        left: -17em;
+    }
+
+    
+}

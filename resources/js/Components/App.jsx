@@ -5,6 +5,7 @@ import ReceiversList from './ReceiversList';
 import ReceiverDetail from './ReceiverDetail';
 import InstitutionDetail from './InstitutionDetail';
 import { Route, Routes } from 'react-router';
+import BeforeLoginHomepage from './BeforeLoginHomepage';
 
 export default function App() {
   const [receivers, setReceivers] = useState([]);
@@ -34,8 +35,9 @@ export default function App() {
   return (
     <>
     <Routes>
-      <Route path="/" element={ <MainContent/> } />
-      <Route path="/admin/list" element={ <ReceiversList/> } />
+      <Route path="/" element={ <BeforeLoginHomepage/> } />
+      <Route path="/home" element={ <MainContent/> } />
+      <Route path="/list" element={ <ReceiversList/> } />
       <Route path="/receiver/{receiver.id}" element={ <ReceiverDetail/> } />
 
   

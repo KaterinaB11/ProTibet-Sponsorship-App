@@ -11,7 +11,7 @@ export default function Main() {
     const loadUser = async () => {
         const response = await axios.get("/api/user");
         if (response.status === 200) {
-            const data = await response.json();
+            const data = await response.data;
             setUser(data);
         } else if (response.status === 401) {
             setUser(false);
