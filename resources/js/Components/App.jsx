@@ -18,14 +18,6 @@ export default function App() {
       <Route path="/institution/:id" element={<InstitutionDetail />} /> 
       <Route path="*" element={ <BeforeLoginHomepage/> } />
     </Routes>
-    
-      {/* <div>
-        <ReceiversList receivers={receivers} onReceiverClick={handleReceiverClick} onInstitutionClick={handleInstitutionClick} />
-      </div>
-      <div>
-      {selectedReceiver && <ReceiverDetail receiver={selectedReceiver} />}
-      {selectedInstitution && <InstitutionDetail institution={selectedInstitution} />}
-      </div> */}
     </>
   );
 }

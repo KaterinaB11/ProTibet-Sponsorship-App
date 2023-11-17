@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Institution;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InstitutionController extends Controller
 {
@@ -19,7 +20,17 @@ class InstitutionController extends Controller
 
     return response()->json(['institutions' => $institutions]);
 
-
-
     }
+
+    public function show($id)
+{
+    $institution = Institution::with('media')->find($id);
+
+    if (!$institution) {
+        return response()->json(['message' => 'Institution not found.'], 404);
+    }
+
+    return response()->json(['institution' => $institution]);
+}
+
 }

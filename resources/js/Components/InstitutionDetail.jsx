@@ -1,8 +1,38 @@
 import React from "react";
+import {useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 
-export default function InstitutionDetail({ institution }) {
-  console.log("Institution Detail Data:", institution.media);
 
+export default function InstitutionDetail() {
+  const [institution, setInstitution] = useState(null);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`/api/institution/${id}`)
+      .then((response) => {
+        console.log("Response status:", response.status);
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+  
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Fetched Institution Data:', data);
+  
+        setInstitution(data.institution);
+      })
+      .catch((error) => console.error('Error fetching institution:', error));
+  
+  }, []);
+
+if (!institution) {
+  return <div>Loading...</div>; // or handle the loading state appropriately
+}
+
+  
   return (
     <div>
       <h1>{institution.name}</h1>
@@ -14,7 +44,7 @@ export default function InstitutionDetail({ institution }) {
               .map((profilePic) => (
                 <img
                   key={profilePic.id}
-                  src={profilePic.path}
+                  src={"/"+profilePic.path}
                   alt={institution.name}
                   style={{ width: '500px', borderRadius: '2em' }}
                 />
@@ -32,7 +62,7 @@ export default function InstitutionDetail({ institution }) {
               .map((gallery) => (
                 <img
                   key={gallery.id}
-                  src={gallery.path}
+                  src={"/"+gallery.path}
                   alt={institution.name}
                   style={{ height: '200px' }}
                 />

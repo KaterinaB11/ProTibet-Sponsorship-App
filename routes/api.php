@@ -26,6 +26,8 @@ Route::get('/receivers', [ReceiverController::class, 'index']);
 
 Route::get('/receiver/{id}', [ReceiverController::class, 'show']);
 
+Route::get('/institution/{id}', [InstitutionController::class, 'show']);
+
 Route::get('/institutions', [InstitutionController::class, 'index']);
 
 Route::get('/news', [MediaController::class, 'index']);
