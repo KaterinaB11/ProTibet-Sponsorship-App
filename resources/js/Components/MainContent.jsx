@@ -11,7 +11,6 @@ export default function MainContent () {
      <Header/>
             <div className='main-content__content'>
                 <div className='main-content__text'>
-                    <Login/>
                     <h1>Welcome, username!</h1>
                     <p>Lorem ipsum  djnfhwfhpiwehbfpiwhebpiehwgfpihbdipcbsiocbfiobidobrfcibgfpig udhiefi feufheifhpeprf ferifhoiefhoierfg feriohfoierghfo eriofheoirfhoi ekfbierfgi jdhifhiorehf</p>
                     <p>Buddha</p>

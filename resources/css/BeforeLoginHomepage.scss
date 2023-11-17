@@ -1,55 +1,59 @@
- html, body {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: sans-serif
-      }
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
 }
 
 .homepage{
-    width: 100vw;
-    height: 100vw;
-    background: url('../../public/graphic/pozadí\ \(1200\ x\ 600\ px\).jpg');
-    background-color: rgba(126, 133, 110, 0.8);
-    padding: 5em;
-    margin: 0;
+width: 100vw;
+// height: 100vw;
+background: url('../../public/graphic/pozadí\ \(1200\ x\ 600\ px\).jpg');
+background-size: auto 60%;
+background-color: rgba(14, 14, 2, 0.8);
+padding: 5em;
+margin: 0;
 
-    .homepage__text-img{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-image: url('../../public/graphic/symbol-big.png');
-        background-repeat: no-repeat;
-        background-position: center;
+.homepage__text-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url('../../public/graphic/symbol-big.png');
+    background-repeat: no-repeat;
+    background-position: 30%;
+    background-size: auto 70%;
 
-        .homepage__text{
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        h1{
-            color: rgb(188, 17, 17);
-            font-size: 300%;
-            width: 60%;
-        }
-        p{
-            width: 40vw;
-        }
-        }
-        .homepage__img{
-            width: 30em;
-            border-radius: 2em;
-        }
+    .homepage__text{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    h1{
+        color: rgb(188, 17, 17);
+        font-size: 400%;
+        font-weight: 600;
+        width: 70%;
+        text-align: center;
     }
-    .homepage__login{
-        position: relative;
-        bottom: 5em;
-        left: -17em;
+    p{
+        width: 40vw;
     }
-
-    
+    }
+    .homepage__img{
+        width: 40em;
+        border-radius: 2em;
+    }
 }
+.homepage__login{
+    position: relative;
+    bottom: 15em;
+    right: 24.5em
+    
+} 
+}
+

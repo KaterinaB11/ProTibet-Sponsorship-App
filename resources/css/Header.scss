@@ -21,6 +21,10 @@ header {
             text-decoration: none;
             text-align: center;
             font-size: large;
+            &:hover{
+                scale: 1.2;
+                color: rgb(188, 17, 17);
+            }
         }
     }
 

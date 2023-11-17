@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
 import MainContent from './MainContent';
 import ReceiversList from './ReceiversList';
 import ReceiverDetail from './ReceiverDetail';
-import InstitutionDetail from './InstitutionDetail';
 import { Route, Routes } from 'react-router';
 import BeforeLoginHomepage from './BeforeLoginHomepage';
 
 export default function App() {
   const [receivers, setReceivers] = useState([]);
-  const [selectedReceiver, setSelectedReceiver] = useState(null);
-  const [selectedInstitution, setSelectedInstitution] = useState(null);
+  // const [selectedReceiver, setSelectedReceiver] = useState(null);
+  // const [selectedInstitution, setSelectedInstitution] = useState(null);
 
 
   useEffect(() => {
@@ -23,24 +21,22 @@ export default function App() {
   }, []);
 
 
-  const handleReceiverClick = (receiver) => {
-    setSelectedReceiver(receiver);
-  };
+  // const handleReceiverClick = (receiver) => {
+  //   setSelectedReceiver(receiver);
+  // };
 
-  const handleInstitutionClick = (institution) => {
-    setSelectedInstitution(institution);
-    setSelectedReceiver(null); 
-  };
+  // const handleInstitutionClick = (institution) => {
+  //   setSelectedInstitution(institution);
+  //   setSelectedReceiver(null); 
+  // };
 
   return (
     <>
     <Routes>
-      <Route path="/" element={ <BeforeLoginHomepage/> } />
+      <Route path="*" element={ <BeforeLoginHomepage/> } />
       <Route path="/home" element={ <MainContent/> } />
       <Route path="/list" element={ <ReceiversList/> } />
-      <Route path="/receiver/{receiver.id}" element={ <ReceiverDetail/> } />
-
-  
+      <Route path="/receiver/:id" element={ <ReceiverDetail/> } />
     </Routes>
       {/* <div>
         <Header />

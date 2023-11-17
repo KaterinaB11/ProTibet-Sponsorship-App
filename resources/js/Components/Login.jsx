@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import UserContext from './UserContext';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate instead of useHistory
 import axios from 'axios';
 import '../../css/Login.scss';
 
@@ -12,6 +13,7 @@ export default function Login() {
 
     const [errors, setErrors] = useState({});
     const { setUser } = useContext(UserContext);
+    const navigate = useNavigate();  // useNavigate instead of useHistory
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -19,6 +21,7 @@ export default function Login() {
         try {
             const response = await axios.post('/login', values);
             setUser(null);
+            navigate('/home');  // Use navigate instead of history.push
         } catch (error) {
             if (error.response && error.response.status === 422) {
                 // handle validation errors here
@@ -39,7 +42,6 @@ export default function Login() {
 
     return (
         <form action="/login" method="post" onSubmit={handleSubmit}>
-
             Email:<br />
             <input type="email" name="email" value={values.email} onChange={handleChange} />
             <br />
@@ -57,7 +59,6 @@ export default function Login() {
             }
 
             <button>Login</button>
-
         </form>
     );
 }
