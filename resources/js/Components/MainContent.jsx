@@ -26,7 +26,7 @@ export default function MainContent () {
                         <img src={pic1} alt="" />
                     </div>
                     <div className='main-content-box news'>
-                        <h3>News</h3>
+                        <h3><Link to="/news">News</Link></h3>
                         <img src={pic1} alt="" />
                     </div>
                 </div>

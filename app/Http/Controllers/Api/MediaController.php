@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,7 @@ class MediaController extends Controller
         $userId = Auth::id();
 
         // Query receivers based on the user_id, if available
-        $query = Media::with('user', 'receiver', 'institution');
+        $query = Media::with('receiver', 'institution');
         
         $media = $query->get();
 

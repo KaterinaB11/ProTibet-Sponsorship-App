@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Api\InstitutionController;
 use App\Http\Controllers\Api\ReceiverController;
-use App\Http\Controllers\MediaController;
+use App\Http\Controllers\Api\MediaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
