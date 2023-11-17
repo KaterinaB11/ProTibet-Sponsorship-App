@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import CalculateAge from "./CalculateAge";
 import { useParams } from 'react-router-dom';
 import UserContext from "./UserContext";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function ReceiverDetail() {
   const { user } = useContext(UserContext);
@@ -44,6 +46,7 @@ export default function ReceiverDetail() {
 
   return (
     <>
+    <Header/>
       <div>
         <h1>{receiver.name}</h1>
         <h2>VS: {receiver.VS_receiver}</h2>
@@ -116,6 +119,7 @@ export default function ReceiverDetail() {
           </div>
         )}
       </div>
+      <Footer/>
     </>
   );
 }

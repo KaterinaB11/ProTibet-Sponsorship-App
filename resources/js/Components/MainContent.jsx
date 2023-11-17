@@ -4,6 +4,7 @@ import '../../css/MainContent.scss';
 import Header from './Header';
 import UserContext from './UserContext';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 
 export default function MainContent () {
@@ -30,6 +31,7 @@ export default function MainContent () {
                     </div>
                 </div>
             </div>
+            <Footer/>
      </>
     )
 }
