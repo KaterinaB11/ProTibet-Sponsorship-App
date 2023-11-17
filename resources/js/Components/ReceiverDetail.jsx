@@ -1,11 +1,49 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import CalculateAge from "./CalculateAge";
+import { useParams } from 'react-router-dom';
+import UserContext from "./UserContext";
 
-export default function ReceiverDetail({ receiver }) {
-  const age = CalculateAge(receiver.dob);
+export default function ReceiverDetail() {
+  const { user } = useContext(UserContext);
+  const [receiver, setReceiver] = useState(null);
+
+  // Get the receiver ID from the URL
+  const { id } = useParams();
+
+  useEffect(() => {
+    // Check if 'user' is truthy before making the API call
+    if (user && id) {
+      fetch(`/api/receiver/${id}`)  // Assuming you have an endpoint to fetch a single receiver
+        .then((response) => {
+          console.log("Response status:", response.status);
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+
+          return response.json();
+        })
+        .then((data) => {
+          // Log the data to inspect the structure
+          console.log('Fetched Receiver Data:', data);
+
+          // Set the receiver state
+          setReceiver(data.receiver);
+        })
+        .catch((error) => console.error('Error fetching receiver:', error));
+    }
+  }, [user, id]);
+
+  // Check if receiver object is defined
+  if (!receiver) {
+    return <div>Loading...</div>; // or handle the loading state appropriately
+  }
+
+  // Check if dob property is defined
+  const age = receiver.dob ? CalculateAge(receiver.dob) : "N/A";
 
   return (
-   <>
+    <>
       <div>
         <h1>{receiver.name}</h1>
         <h2>VS: {receiver.VS_receiver}</h2>
@@ -78,6 +116,6 @@ export default function ReceiverDetail({ receiver }) {
           </div>
         )}
       </div>
-   </>
+    </>
   );
 }

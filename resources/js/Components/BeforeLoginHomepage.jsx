@@ -13,7 +13,6 @@ export default function BeforeLoginHomepage(){
 <>
             <Header/>
             <div className="homepage">
-                <img className="homepage__logo" src={Logo} alt="MOST ProTibet" />
                 <div className="homepage__text-img">
                     <div className="homepage__text">
                         <h1>MOST ProTibet Sponsorship</h1>

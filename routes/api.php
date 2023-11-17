@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\InstitutionController;
 use App\Http\Controllers\Api\ReceiverController;
+use App\Http\Controllers\MediaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
@@ -23,5 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/receivers', [ReceiverController::class, 'index']);
 
+Route::get('/receiver/{id}', [ReceiverController::class, 'show']);
+
 Route::get('/institutions', [InstitutionController::class, 'index']);
 
+Route::get('/news', [MediaController::class, 'index']);
