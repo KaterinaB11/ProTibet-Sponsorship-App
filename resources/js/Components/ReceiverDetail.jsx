@@ -11,9 +11,9 @@ export default function ReceiverDetail() {
   const { id } = useParams();
 
   useEffect(() => {
-    // Check if 'user' is truthy before making the API call
+    
     if (user && id) {
-      fetch(`/api/receiver/${id}`)  // Assuming you have an endpoint to fetch a single receiver
+      fetch(`/api/receiver/${id}`)  
         .then((response) => {
           console.log("Response status:", response.status);
 
@@ -51,20 +51,20 @@ export default function ReceiverDetail() {
           <h4>Lives in: {receiver.institution.name}</h4>
           <h4>Age: {age}</h4>
         </div>
-        {receiver.media && receiver.media.length > 0 && (
-          <div className="detail__profile-pic">
-            {receiver.media
-              .filter((media) => media.type === 'profile_pic')
-              .map((profilePic) => (
-                <img
-                  key={profilePic.id}
-                  src={profilePic.path}
-                  alt={receiver.name}
-                  style={{ width: '200px', height: '200px', borderRadius: '2em' }}
-                />
-              ))}
-          </div>
-        )}
+        {receiver.media &&
+  receiver.media.map((media) => {
+    if (media.type === 'profile_pic') {
+      return (
+        <img
+          key={media.id}
+          src={"/"+media.path}
+          alt={receiver.name}
+          style={{ width: '50px', height: '50px' }}
+        />
+      );
+    }
+    return null; // or handle other types if needed
+  })}
         <h2>About {receiver.name} </h2>
         <p>{receiver.about}</p>
       </div>
@@ -77,7 +77,7 @@ export default function ReceiverDetail() {
               .map((gallery) => (
                 <img
                   key={gallery.id}
-                  src={gallery.path}
+                  src={"/"+gallery.path}
                   alt={receiver.name}
                   style={{ height: '200px' }}
                 />
@@ -93,7 +93,7 @@ export default function ReceiverDetail() {
               .map((letter) => (
                 <img
                   key={letter.id}
-                  src={letter.path}
+                  src={"/"+letter.path}
                   alt={receiver.name}
                   style={{ height: '200px' }}
                 />
@@ -108,7 +108,7 @@ export default function ReceiverDetail() {
               .map((document) => (
                 <embed
                   key={document.id}
-                  src={document.path}
+                  src={"/"+document.path}
                   alt={receiver.name}
                   style={{ height: '200px' }}
                 />
