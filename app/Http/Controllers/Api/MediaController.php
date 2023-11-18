@@ -25,4 +25,16 @@ class MediaController extends Controller
 
         return response()->json(['media' => $media]);
     }
+
+    public function show($id)
+    {
+        $media = Media::with('institution', 'receiver')->find($id);
+
+        if (!$media) {
+            return response()->json(['message' => 'News not found.'], 404);
+        }
+    
+        return response()->json(['media' => $media]);
+
+    }
 }
