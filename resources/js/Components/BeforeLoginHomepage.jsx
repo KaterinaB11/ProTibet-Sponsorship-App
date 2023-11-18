@@ -1,6 +1,5 @@
 import React from "react";
-import MainPic from "../../../public/media/india-0497.jpg";
-import Logo from "../../../public/graphic/logo.png";
+import MainPic from "../../../public/media/india-1395.jpg";
 import Login from "./Login";
 import "../../css/BeforeLoginHomepage.scss";
 import Header from "./Header";
@@ -13,19 +12,21 @@ export default function BeforeLoginHomepage() {
             <Header />
             <div className="homepage">
                 <div className="homepage__text-img">
-                    <div className="homepage__text">
-                        <h1>MOST ProTibet Sponsorship</h1>
+                    <div className="homepage__text-login">
+                        <div className="homepage__text">
+                            <h1>MOST ProTibet Sponsorship</h1>
+                        </div>
+                        <div className="homepage__login">
+                            <Routes>
+                                <Route path="/login" element={<Login />} />
+                            </Routes>
+                        </div>
                     </div>
                     <img
                         className="homepage__img"
                         src={MainPic}
                         alt="MOST ProTibet"
                     />
-                </div>
-                <div className="homepage__login">
-                    <Routes>
-                        <Route path="/login" element={<Login />} />
-                    </Routes>
                 </div>
             </div>
             <Footer />
