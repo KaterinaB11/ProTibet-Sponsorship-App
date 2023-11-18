@@ -16,6 +16,8 @@ class ReceiversTableSeeder extends Seeder
     {
         $receivers = [
             [
+                'user_id' => 2,
+                'institution_id' => 3,
                 'name' => 'Tenzin Rangdol',
                 'VS_receiver' => 117032,
                 'institution' => 'Tibetan Children Village',
@@ -29,6 +31,8 @@ class ReceiversTableSeeder extends Seeder
                 I am very happy that I can study here. I found a lot of friends here, with whom I really like to spend my time. The teacher says that I am a very friendly and active boy. I enjoy social studies the most at school. My favorite color is light blue and I'm happiest when I have lentils with rice for dinner."
             ],
             [
+                'user_id' => 1,
+                'institution_id' => 2,
                 'name' => 'Stanzin Wangchuk',
                 'VS_receiver' => 111083,
                 'institution' => 'Diskit Monastery',
@@ -40,6 +44,8 @@ class ReceiversTableSeeder extends Seeder
                 I joined the school at the end of 2021. My favorite subject is math and in my free time I enjoy cricket the most. My favorite food is momo dumplings. When I grow up, I want to be a geshe."
             ],
             [
+                'user_id' => 1,
+                'institution_id' => 1,
                 'name' => 'Dorjee Nisher',
                 'VS_receiver' => 122058,
                 'institution' => 'Ladakh exile villages',

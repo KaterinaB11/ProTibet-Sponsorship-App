@@ -35,8 +35,10 @@ export default function ReceiversList() {
                     const userReceivers = data.receivers.filter(
                         (receiver) => receiver.user_id === user.id
                     );
+                    
                     setReceivers(userReceivers);
                 })
+                
                 .catch((error) =>
                     console.error("Error fetching receivers:", error)
                 );
