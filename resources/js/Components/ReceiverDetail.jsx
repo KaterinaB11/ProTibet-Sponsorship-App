@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import CalculateAge from "./CalculateAge";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import UserContext from "./UserContext";
 import Header from "./Header";
 import Footer from "./Footer";
-import '../../css/ReceiverDetail.scss';
+import "../../css/ReceiverDetail.scss";
 
 export default function ReceiverDetail() {
     const { user } = useContext(UserContext);
@@ -51,39 +51,46 @@ export default function ReceiverDetail() {
     return (
         <>
             <Header />
+
             <div className="receiver-detail__content">
-                <div className="receiver-detail__content-person">
-                    <div className="receiver-detail__headings-img">
-                        <h1>{receiver.name}</h1>
-                        <h2>VS: {receiver.VS_receiver}</h2>
-                        <div className="receiver-detail__place-age">
-                            <h4>Lives in: {receiver.institution.name}</h4>
-                            <h4>Age: {age}</h4>
-                        </div>
-                        {receiver.media &&
-                            receiver.media.map((media) => {
-                                if (media.type === "profile_pic") {
-                                    return (
-                                        <img
-                                            key={media.id}
-                                            src={"/" + media.path}
-                                            alt={receiver.name}
-                                            
-                                        />
-                                    );
-                                }
-                                return null; 
-                            })}
-                    </div>
+                <div className="receiver-detail__heading">
+                    <h1>{receiver.name}</h1>
+                </div>
+
+                <div className="receiver-detail__img-about">
                     <div className="receiver-detail__about">
-                        <h2>About {receiver.name} </h2>
+                        <h2>About {receiver.name}</h2>
                         <p>{receiver.about}</p>
+                        <div className="receiver-detail__h4s">
+                            <h2>VS: {receiver.VS_receiver}</h2>
+                            <h2>
+                                <Link
+                                    to={`/institution/${receiver.institution.id}`}
+                                >
+                                    Lives in: {receiver.institution.name}
+                                </Link>
+                            </h2>
+                            <h2>Age: {age}</h2>
+                        </div>
                     </div>
+                    {receiver.media &&
+                        receiver.media.map((media) => {
+                            if (media.type === "profile_pic") {
+                                return (
+                                    <img
+                                        key={media.id}
+                                        src={"/" + media.path}
+                                        alt={receiver.name}
+                                    />
+                                );
+                            }
+                            return null;
+                        })}
                 </div>
                 <div className="receiver-detail__gallery">
                     <h2>Gallery</h2>
                     {receiver.media && receiver.media.length > 0 && (
-                        <div className="receiver-detail__gallery-detail">
+                        <div className="receiver-detail__gallery-images">
                             {receiver.media
                                 .filter((media) => media.type === "gallery")
                                 .map((gallery) => (
@@ -96,43 +103,42 @@ export default function ReceiverDetail() {
                                 ))}
                         </div>
                     )}
-    
-                    <div className="receiver-detail__gallery">
-                        <h2>Letters</h2>
-                        {receiver.media && receiver.media.length > 0 && (
-                            <div className="receiver-detail__gallery-detail">
-                                {receiver.media
-                                    .filter((media) => media.type === "letter")
-                                    .map((letter) => (
-                                        <img
-                                            key={letter.id}
-                                            src={"/" + letter.path}
-                                            alt={receiver.name}
-                                            style={{ height: "250px" }}
-                                            
-                                        />
-                                    ))}
-                            </div>
-                        )}
-                    </div>
-                    <div className="receiver-detail__gallery">
-                        <h2>Sponsorship documents</h2>
-                        {receiver.media && receiver.media.length > 0 && (
-                            <div className="receiver-detail__gallery-detail">
-                                {receiver.media
-                                    .filter((media) => media.type === "document")
-                                    .map((document) => (
-                                        <embed
-                                            key={document.id}
-                                            src={"/" + document.path}
-                                            alt={receiver.name}
-                                            style={{ height: "20px" }}
-                                            
-                                        />
-                                    ))}
-                            </div>
-                        )}
-                    </div>
+
+                    <hr />
+
+                    <h2>Letters</h2>
+                    {receiver.media && receiver.media.length > 0 && (
+                        <div className="receiver-detail__gallery-images">
+                            {receiver.media
+                                .filter((media) => media.type === "letter")
+                                .map((letter) => (
+                                    <img
+                                        key={letter.id}
+                                        src={"/" + letter.path}
+                                        alt={receiver.name}
+                                        style={{ height: "250px" }}
+                                    />
+                                ))}
+                        </div>
+                    )}
+
+                    <hr />
+
+                    <h2>Sponsorship documents</h2>
+                    {receiver.media && receiver.media.length > 0 && (
+                        <div className="receiver-detail__gallery-images">
+                            {receiver.media
+                                .filter((media) => media.type === "document")
+                                .map((document) => (
+                                    <embed
+                                        key={document.id}
+                                        src={"/" + document.path}
+                                        alt={receiver.name}
+                                        style={{ height: "400px" }}
+                                    />
+                                ))}
+                        </div>
+                    )}
                 </div>
             </div>
             <Footer />

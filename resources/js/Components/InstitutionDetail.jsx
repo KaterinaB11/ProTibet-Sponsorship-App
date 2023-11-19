@@ -43,6 +43,7 @@ export default function InstitutionDetail() {
             </div>
       
             <div className="institution-detail__pic-about">
+              <h2>Location: {institution.location}</h2>
                 {institution.media && institution.media.length > 0 && (
                   <div className="institution-detail__profile-pic">
                     {institution.media
@@ -57,7 +58,7 @@ export default function InstitutionDetail() {
                       ))}
                   </div>
                 )}
-                <h2>Location: {institution.location}</h2>
+                
                 <h2>About {institution.name}</h2>
                 <p>{institution.about}</p>
             </div>

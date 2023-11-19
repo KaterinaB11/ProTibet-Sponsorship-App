@@ -1,0 +1,68 @@
+.receiver-detail__content {
+    margin: 0 auto;
+
+    .receiver-detail__heading {
+        width: 100vw;
+        background-color: rgb(236, 220, 200);
+        padding: 4em 10em;
+        margin: 0;
+        h1 {
+            color: rgb(188, 17, 17);
+            font-size: 3.5em;
+            font-weight: 600;
+        }
+    }
+    .receiver-detail__h4s{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            gap: 4em;
+           
+        }
+
+    .receiver-detail__img-about{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 2em 10em;
+        gap: 3em;
+        background-image: url("../../public/graphic/symbol-big.png");
+        background-repeat: no-repeat;
+        background-position: 60% 40%;
+        background-size: auto 60%;
+    }
+    
+        img{
+            border-radius: 2em;
+            
+        }
+        
+h2 {
+            color: rgb(188, 17, 17);
+        }
+    
+
+    .receiver-detail__gallery{
+        padding: 4em 10em;
+        background-color: rgb(236, 220, 200);
+        
+
+        .receiver-detail__gallery-images{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            padding-bottom: 1em;
+        }
+    }
+}
+
+
+a {
+    color: rgb(188, 17, 17);
+    // text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+  
+    &:hover {
+        transform: scale(1.05);    }
+  }

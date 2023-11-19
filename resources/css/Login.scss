@@ -27,11 +27,12 @@ form {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    &:hover {
+      background-color: darken(rgb(188, 17, 17), 10%);
+    }
   }
   
-  button:hover {
-    background-color: #45a049;
-  }
+
   
   .errors {
     color: red;

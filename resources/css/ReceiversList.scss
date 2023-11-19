@@ -1,6 +1,4 @@
-/* Add this to your styles */
 
-/* Container styling */
 .receivers-list {
     margin: 0;
     background-color: antiquewhite;
@@ -12,7 +10,7 @@
     padding: 2em 6em;
   }
   
-  /* Heading styling */
+  
   .receivers-list h1 {
     color: rgb(188, 17, 17);
     font-size: 2em;
@@ -28,7 +26,7 @@
 
   }
   
-  /* Table styling */
+ 
   .receivers-list table {
     width: 70vw;
     border-collapse: separate;
@@ -37,7 +35,7 @@
     font-size: 18px;
   }
   
-  /* Table header styling */
+ 
   .receivers-list th {
     background-color: rgb(188, 17, 17);
     color: #fff;
@@ -45,16 +43,16 @@
     text-align: left;
   }
   
-  /* Table cell styling */
+  
   .receivers-list td {
     padding: 20px;
     border-bottom: 1px solid #fff;
   }
   
-  /* Link styling */
+  
   .receivers-list a {
     color: rgb(188, 17, 17);
-    text-decoration: none;
+    // text-decoration: none;
     font-weight: bold;
     transition: transform 0.3s ease-in-out;
   
@@ -62,7 +60,7 @@
         transform: scale(1.05);    }
   }
   
-  /* Profile picture styling */
+  
   .receivers-list img {
     width: 150px;
     height: 150px;
