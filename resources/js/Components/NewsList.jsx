@@ -3,7 +3,8 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
-import NewsDetail from "./NewsDetail";
+import "../../css/NewsList.scss";
+
 
 export default function NewsList() {
     const [media, setMedia] = useState([]);
@@ -40,26 +41,29 @@ export default function NewsList() {
     return (
         <>
             <Header />
-            <div>
-                <h1>News List</h1>
-                <div className="news-container">
-                    {media.map((newsItem) => (
-                        <div key={newsItem.id} className="news-item">
-                            <h2>{newsItem.headline}</h2>
-                            <img
-                                src={newsItem.path}
-                                alt="News from India"
-                                style={{ width: "300px" }}
-                            />
-                            <p>{newsItem.name}</p>
-                            {/* <NewsDetail newsItem={newsItem}/> */}
-                            <button>
-                                <Link to={`/news/${newsItem.id}`}>
-                                    Read full story
-                                </Link>
-                            </button>
-                        </div>
-                    ))}
+            <div className="news__content">
+                <div className="news__heading"><h1>News</h1></div>
+                <div className="news-containers">
+                    <div className="news-container">
+                        {media.map((newsItem) => (
+                            <div key={newsItem.id} className="news-item">
+                                <h2>{newsItem.headline}</h2>
+                                <img
+                                    src={newsItem.path}
+                                    alt="News from India"
+                                    style={{ width: "300px" }}
+                                />
+                                <h4>{new Date(newsItem.created_at).toLocaleDateString('en-GB')}</h4>
+                                <p>{newsItem.name}</p>
+                                {/* <NewsDetail newsItem={newsItem}/> */}
+                                <button>
+                                    <Link to={`/news/${newsItem.id}`}>
+                                        Read full story
+                                    </Link>
+                                </button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
             <Footer />

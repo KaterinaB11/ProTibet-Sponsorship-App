@@ -1,0 +1,50 @@
+/* Add this to your existing styles or create a new stylesheet for NewsDetail */
+
+.news-detail-container {
+    margin: 0 auto;
+    
+  }
+
+  .news-detail__heading{
+    width: 100vw;
+    background-color: rgb(236, 220, 200);
+    padding: 4em 10em;
+    margin: 0;
+  }
+  
+  .news-detail__img-about{
+    background-color: antiquewhite;
+    padding: 3em 10em;
+    margin: 0;
+    background-image: url("../../public/graphic/symbol-big.png");
+        background-repeat: no-repeat;
+        background-position: 70% 70%;
+        background-size: auto 30%;
+  }
+  .news-detail-container h1 {
+    color: rgb(188, 17, 17);
+    font-size: 3.5em;
+    font-weight: 600;
+    
+  }
+
+  .news-detail-container h2 {
+    color: rgb(188, 17, 17);
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .news-detail-container img {
+    width: 50vw;
+    height: auto;
+    border-radius: 2em;
+    margin-bottom: 20px;
+  }
+  
+   p {
+    line-height: 1.6;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  

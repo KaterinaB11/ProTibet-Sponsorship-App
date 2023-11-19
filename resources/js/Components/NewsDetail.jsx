@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import "../../css/NewsDetail.scss"
 
 export default function NewsDetail({ newsItemProp }) {
     console.log("News Detail Data:", newsItemProp);
@@ -34,14 +35,17 @@ export default function NewsDetail({ newsItemProp }) {
         <>
             <Header />
             <div className="news-detail-container">
-                <h1>{newsItem.headline}</h1>
-                <img
-                    src={"/" + newsItem.path}
-                    alt="News from India"
-                    style={{ width: "600px" }}
-                />
-                <p>{newsItem.description}</p>
-                {/* Add more details if needed */}
+                <div className="news-detail__heading"><h1>News from {newsItem.institution.name}</h1></div>
+               <div className="news-detail__img-about">
+                    <h2>{newsItem.headline}</h2>
+                    <img
+                        src={"/" + newsItem.path}
+                        alt="News from India"
+                        style={{ width: "600px" }}
+                    />
+                    <p>{newsItem.description}</p>
+               </div>
+                
             </div>
             <Footer />
         </>
