@@ -43,7 +43,7 @@ export default function Contact() {
                             <img src={Jana} alt="" />
                             <div className="contact__name-position">
                                 <h5>Jana Ďásková</h5>
-                                <p>CEO</p>
+                                <p><strong>CEO</strong></p>
                             </div>
                             <p>phone: +420 774 899 242</p>
                             <p>email: jana@protibet.cz</p>
@@ -55,7 +55,7 @@ export default function Contact() {
                             <img src={Gabka} alt="" />
                             <div className="contact__name-position">
                                 <h5>Gabriela Šmídová</h5>
-                                <p>Projects, Sponsorship, Fundraising</p>
+                                <p><strong>Projects, Sponsorship, Fundraising</strong></p>
                             </div>
                             <p>phone: +420 774 899 242</p>
                             <p>email: gabriela@protibet.cz</p>
@@ -67,7 +67,7 @@ export default function Contact() {
                             <img src={Zuzka} alt="" />
                             <div className="contact__name-position">
                                 <h5>Zuzana Kiková</h5>
-                                <p>Sponsorship, Eshop</p>
+                                <p><strong>Sponsorship, Eshop</strong></p>
                             </div>
                             <p>phone: +420 774 899 242</p>
                             <p>email: zuzana@protibet.cz</p>
@@ -98,6 +98,7 @@ export default function Contact() {
                     </div>
                     <div className="contact__form">
                         <h1>Contact Us</h1>
+                        <p>Have questions, suggestions, or just want to say hello? We'd love to hear from you! Please fill out the form below, and we'll get back to you as soon as possible. Your feedback is important to us.</p>
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="name">Name:</label>
                             <input

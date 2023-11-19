@@ -9,6 +9,7 @@ import "../../css/ReceiverDetail.scss";
 export default function ReceiverDetail() {
     const { user } = useContext(UserContext);
     const [receiver, setReceiver] = useState(null);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     // Get the receiver ID from the URL
     const { id } = useParams();
@@ -40,9 +41,17 @@ export default function ReceiverDetail() {
         }
     }, [user, id]);
 
+    const goToPreviousImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? prevIndex : prevIndex - 1));
+    };
+  
+    const goToNextImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex === institution.media.length - 1 ? prevIndex : prevIndex + 1));
+    };
+
     // Check if receiver object is defined
     if (!receiver) {
-        return <div>Loading...</div>; // or handle the loading state appropriately
+        return <div>Loading...</div>; 
     }
 
     // Check if dob property is defined
@@ -94,6 +103,7 @@ export default function ReceiverDetail() {
                             {receiver.media
                                 .filter((media) => media.type === "gallery")
                                 .map((gallery) => (
+                                    
                                     <img
                                         key={gallery.id}
                                         src={"/" + gallery.path}

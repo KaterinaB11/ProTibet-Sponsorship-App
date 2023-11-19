@@ -44,7 +44,8 @@ h2 {
 
     .receiver-detail__gallery{
         padding: 4em 10em;
-        background-color: rgb(236, 220, 200);
+        background-color: antiquewhite;
+        
         
 
         .receiver-detail__gallery-images{
@@ -52,6 +53,7 @@ h2 {
             flex-wrap: wrap;
             gap: 1em;
             padding-bottom: 1em;
+            
         }
     }
 }
@@ -65,4 +67,8 @@ a {
   
     &:hover {
         transform: scale(1.05);    }
+  }
+
+  .button-for-images{
+    height: 3em;
   }
