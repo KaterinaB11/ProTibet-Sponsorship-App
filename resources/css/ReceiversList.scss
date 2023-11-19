@@ -1,0 +1,79 @@
+/* Add this to your styles */
+
+/* Container styling */
+.receivers-list {
+    margin: 0;
+    background-color: antiquewhite;
+  }
+
+  .receivers-list__heading{
+    width: 100vw;
+  background-color: rgb(236, 220, 200);
+    padding: 2em 6em;
+  }
+  
+  /* Heading styling */
+  .receivers-list h1 {
+    color: rgb(188, 17, 17);
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-size: 3.5em;
+    font-weight: 600;
+  }
+
+  .receivers-list__table{
+    display: flex;
+    justify-content: center;
+    padding: 4em;
+
+  }
+  
+  /* Table styling */
+  .receivers-list table {
+    width: 70vw;
+    border-collapse: separate;
+    border: 1px solid white;
+    margin-top: 20px;
+  }
+  
+  /* Table header styling */
+  .receivers-list th {
+    background-color: rgb(188, 17, 17);
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* Table cell styling */
+  .receivers-list td {
+    padding: 20px;
+    border-bottom: 1px solid #fff;
+  }
+  
+  /* Link styling */
+  .receivers-list a {
+    color: rgb(188, 17, 17);
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+  
+    &:hover {
+        transform: scale(1.05);    }
+  }
+  
+  /* Profile picture styling */
+  .receivers-list img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  /* No receivers message styling */
+  .receivers-list td[colSpan="5"] {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+  }
+  

@@ -1,0 +1,87 @@
+/* Add this to your existing styles or create a new stylesheet for InstitutionDetail */
+
+.institution-detail {
+    
+    margin: 0 auto;
+    
+    
+    
+  }
+  .institution-detail__heading{
+    width: 100vw;
+    background-color: rgb(236, 220, 200);
+    padding: 4em 10em;
+    margin: 0;
+
+  }
+  .institution-detail__pic-about{
+    background-color: antiquewhite;
+    padding: 6em 10em;
+    margin: 0;
+    background-image: url("../../public/graphic/symbol-big.png");
+        background-repeat: no-repeat;
+        background-position: 70% 70%;
+        background-size: auto 30%;
+  }
+  
+  .institution-detail h1 {
+    color: rgb(188, 17, 17);
+    font-size: 3.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .institution-detail__profile-pic {
+    
+    width: 50vw;
+  }
+  
+  .institution-detail__profile-pic-img {
+    width: 100%;
+    border-radius: 2em;
+  }
+  
+  .institution-detail h2 {
+    color: rgb(188, 17, 17);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .institution-detail p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .institution-detail__gallery-heading {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: rgb(236, 220, 200);
+    margin: 0;
+    padding-left: 10em;
+
+  }
+  
+  .institution-detail__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: rgb(236, 220, 200);
+    padding: 2em 10em;
+    margin: 0;
+
+  }
+  
+  .institution-detail__gallery-img {
+    // width: calc(33.333% - 10px);
+    height: 200px;
+    object-fit: cover;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .institution-detail__gallery-img:hover {
+    transform: scale(1.05);
+  }
+  

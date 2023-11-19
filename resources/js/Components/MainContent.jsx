@@ -20,23 +20,28 @@ export default function MainContent() {
                     <div className="main-content__text">
                         <h1>Welcome, {user ? user.username : "Guest"}!</h1>
                         <p>
-                            Together we build an environment for mutual sharing of
-                            human values. We support the basic needs of Tibetan
-                            individuals and communities in exile in the Indian
-                            Himalayas. We help to maintain the national identity and
-                            cultural wealth of Tibet.
+                            Together we build an environment for mutual sharing
+                            of human values. We support the basic needs of
+                            Tibetan individuals and communities in exile in the
+                            Indian Himalayas. We help to maintain the national
+                            identity and cultural wealth of Tibet.
                             <p>
-                                Donating improves the lives of Tibetans. It creates
-                                future opportunities for children and contributes to
-                                dignified living conditions for Tibetan seniors and
-                                families in poverty. cultural wealth of Tibet.
+                                Donating improves the lives of Tibetans. It
+                                creates future opportunities for children and
+                                contributes to dignified living conditions for
+                                Tibetan seniors and families in poverty.
+                                cultural wealth of Tibet.
                             </p>
                         </p>
                         <p>
                             <strong>Thank you for being here!</strong>
                         </p>
                     </div>
-                    <img className="main-content__img" src={pic3} alt="MOST ProTibet" />
+                    <img
+                        className="main-content__img"
+                        src={pic3}
+                        alt="MOST ProTibet"
+                    />
                 </div>
 
                 <div className="main-content__both-links">
@@ -46,22 +51,22 @@ export default function MainContent() {
                         </div>
                         <div className="main-content-box__right">
                             <img className="img-cross" src={cross} alt="" />
-                            <h3>
-                                PEOPLE I SUPPORT
-                            </h3>
-                            <button>MORE<Link to="/list"></Link></button>
+                            <h3>PEOPLE I SUPPORT</h3>
+                            <button>
+                                <Link to="/list">MORE</Link>
+                            </button>
                         </div>
                     </div>
                     <div className="main-content-box news">
-                    <div className="main-content-box__left">
+                        <div className="main-content-box__left">
                             <img src={pic1} alt="My support" />
                         </div>
                         <div className="main-content-box__right">
                             <img className="img-cross" src={cross} alt="" />
-                            <h3>
-                                NEWS
-                            </h3>
-                            <button>MORE<Link to="/news"></Link></button>
+                            <h3>NEWS</h3>
+                            <button>
+                                <Link to="/news">MORE</Link>
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -1,36 +1,4 @@
-// .main-content__content{
-//     width: 80vw;
-//     margin: 3em;
-//     padding: 2em;
 
-//     .main-content__text{
-
-//     }
-
-//     .main-content__both-links{
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-around;
-
-//         .main-content-box{
-//             width: 20em;
-//             height: 20em;            
-//             background-color: antiquewhite;
-//             border: 1px solid antiquewhite;
-//             border-radius: 2em;
-//             padding: 3em;
-//             margin: 3em;
-//             display: flex;
-//             flex-direction: column;
-//             align-items: center;
-        
-//             img{
-//                 width: 100%;
-//                 border-radius: 1em;
-//             };
-//         }
-//     }
-// }
 
 .main-content__content {
   display: flex;
@@ -42,7 +10,7 @@
 
 .main-content__heading-img {
     width: 100vw;
-  background-color: rgb(236, 220, 200);
+    background-color: rgb(236, 220, 200);
     padding: 6em 10em;
     display: flex;
     justify-content: space-between;
@@ -130,6 +98,10 @@
 
         &:hover {
           background-color: darken(rgb(188, 17, 17), 10%);
+        }
+        a {
+          color: inherit;  /* Inherit the color from the parent (button) */
+          text-decoration: none;  /* Remove underlining */
         }
       }
     }

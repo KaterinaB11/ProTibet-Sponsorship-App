@@ -9,7 +9,7 @@ export default function Header() {
             <img src={logo} alt="MOST ProTibet" width="143" height="70" />
             <nav>
                 <Link to="/home">Home</Link>
-                <Link to="/list">My Beneficiaries</Link>
+                <Link to="/list">People I support</Link>
                 <Link to="/news">News</Link>
                 <Link to="/faq">FAQ</Link>
                 <Link to="/contact">Contact</Link>

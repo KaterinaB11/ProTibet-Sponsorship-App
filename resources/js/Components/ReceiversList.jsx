@@ -3,6 +3,7 @@ import UserContext from "./UserContext";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import '../../css/ReceiversList.scss';
 
 export default function ReceiversList() {
     const { user } = useContext(UserContext);
@@ -50,65 +51,64 @@ export default function ReceiversList() {
     return (
         <>
             <Header />
-            <div>
-                <h1>People in my support</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Receiver Name</th>
-                            <th>VS</th>
-                            <th>Institution</th>
-                            <th>Profile Pic</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {receivers && receivers.length > 0 ? (
-                            receivers.map((receiver) => (
-                                <tr key={receiver.id}>
-                                    <td>
-                                        <Link to={`/receiver/${receiver.id}`}>
-                                            {receiver.name}
-                                        </Link>
-                                    </td>
-                                    <td>{receiver.VS_receiver}</td>
-                                    <td>
-                                        <Link
-                                            to={`/institution/${receiver.institution.id}`}
-                                        >
-                                            {receiver.institution
-                                                ? receiver.institution.name
-                                                : "N/A"}
-                                        </Link>
-                                    </td>
-                                    <td>
-                                        {receiver.media &&
-                                            receiver.media
-                                                .filter(
-                                                    (media) =>
-                                                        media.type ===
-                                                        "profile_pic"
-                                                )
-                                                .map((profilePic) => (
-                                                    <img
-                                                        key={profilePic.id}
-                                                        src={profilePic.path}
-                                                        alt={receiver.name}
-                                                        style={{
-                                                            width: "50px",
-                                                            height: "50px",
-                                                        }}
-                                                    />
-                                                ))}
-                                    </td>
-                                </tr>
-                            ))
-                        ) : (
+            <div className="receivers-list">
+                <div className="receivers-list__heading"><h1>People in my support</h1></div>
+                <div className="receivers-list__table">
+                    <table>
+                        <thead>
                             <tr>
-                                <td colSpan="5">No receivers found.</td>
+                                <th>Receiver Name</th>
+                                <th>VS</th>
+                                <th>Institution</th>
+                                <th>Profile Pic</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {receivers && receivers.length > 0 ? (
+                                receivers.map((receiver) => (
+                                    <tr key={receiver.id}>
+                                        <td>
+                                            <Link to={`/receiver/${receiver.id}`}>
+                                                {receiver.name}
+                                            </Link>
+                                        </td>
+                                        <td>{receiver.VS_receiver}</td>
+                                        <td>
+                                            <Link
+                                                to={`/institution/${receiver.institution.id}`}
+                                            >
+                                                {receiver.institution
+                                                    ? receiver.institution.name
+                                                    : "N/A"}
+                                            </Link>
+                                        </td>
+                                        <td>
+                                            {receiver.media &&
+                                                receiver.media
+                                                    .filter(
+                                                        (media) =>
+                                                            media.type ===
+                                                            "profile_pic"
+                                                    )
+                                                    .map((profilePic) => (
+                                                        <img
+                                                            key={profilePic.id}
+                                                            src={profilePic.path}
+                                                            alt={receiver.name}
+                                                            
+                                                        />
+                                                    ))}
+                                        </td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="5">No receivers found.</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <Footer />
         </>
