@@ -1,0 +1,52 @@
+/* Add this to your existing styles or create a new stylesheet for FAQ */
+
+.faq__heading {
+    width: 100vw;
+    background-color: rgb(236, 220, 200);
+    padding: 4em 10em;
+    margin: 0;
+  
+    h1 {
+      color: rgb(188, 17, 17);
+      font-size: 3.5em;
+      font-weight: 600;
+    }
+  }
+  
+  .faq__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin: 0 auto;
+    padding: 2em 10em;
+    background-color: antiquewhite;
+  }
+  
+  .faq_question {
+    background-color: white;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    
+
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    h2 {
+      color: rgb(188, 17, 17);
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Optional: Add styling for specific elements if needed */
+  
+  
