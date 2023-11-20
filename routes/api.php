@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\InstitutionController;
 use App\Http\Controllers\Api\ReceiverController;
 use App\Http\Controllers\Api\MediaController;
+use App\Http\Controllers\Api\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
@@ -43,3 +44,6 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
 // Logout
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
     ->name('logout');
+
+
+    Route::post('/contact', [MessageController::class, 'store']);

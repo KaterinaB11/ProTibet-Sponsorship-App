@@ -25,14 +25,14 @@ export default function MainContent() {
                             Tibetan individuals and communities in exile in the
                             Indian Himalayas. We help to maintain the national
                             identity and cultural wealth of Tibet.
-                            <p>
-                                Donating improves the lives of Tibetans. It
-                                creates future opportunities for children and
-                                contributes to dignified living conditions for
-                                Tibetan seniors and families in poverty.
-                                cultural wealth of Tibet.
-                            </p>
                         </p>
+                        <p>
+                            Donating improves the lives of Tibetans. It creates
+                            future opportunities for children and contributes to
+                            dignified living conditions for Tibetan seniors and
+                            families in poverty. cultural wealth of Tibet.
+                        </p>
+
                         <p>
                             <strong>Thank you for being here!</strong>
                         </p>

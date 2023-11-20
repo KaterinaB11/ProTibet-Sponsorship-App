@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function ContactUsForm(){
     const [formData, setFormData] = useState({
@@ -15,10 +16,26 @@ export default function ContactUsForm(){
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("Form data:", formData);
 
-        console.log("Form data submitted:", formData);
+        try {
+            const response = await axios.post("api/contact", formData);
+            const data = response.data.message; 
+            setFormData(data);   
+    
+          
+        } catch (error) {
+            if (error.response && error.response.status === 422) {
+                // handle validation errors here
+                console.log("VALIDATION FAILED:", error.response.data.errors);
+                setErrors(error.response.data.errors);
+            } else {
+                console.log("UNKNOWN ERROR", error.message);
+            }
+        }
+        
     };
 return(
     <div className="contact-form__content">
@@ -55,8 +72,8 @@ return(
                                 name="message"
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                rows={6} // Set the number of visible rows
-                                cols={30} // Set the number of visible columns
+                                rows={6} 
+                                cols={30} 
                                 style={{ resize: "vertical" }} // Allow vertical resizing
                                 required
                             ></textarea>
