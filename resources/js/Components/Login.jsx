@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import UserContext from "./UserContext";
-import { useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
+import { useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import "../../css/Login.scss";
 
@@ -12,15 +12,17 @@ export default function Login() {
 
     const [errors, setErrors] = useState({});
     const { setUser } = useContext(UserContext);
-    const navigate = useNavigate(); // useNavigate instead of useHistory
+    const navigate = useNavigate(); 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
             const response = await axios.post("/login", values);
-            setUser(null);
-            navigate("/home"); // Use navigate instead of history.push
+            const user = response.data.user; // Assuming your API returns user information
+            setUser(user);   
+            navigate("/home");
+          
         } catch (error) {
             if (error.response && error.response.status === 422) {
                 // handle validation errors here

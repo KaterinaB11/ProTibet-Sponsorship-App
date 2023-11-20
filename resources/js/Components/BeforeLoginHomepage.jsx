@@ -17,9 +17,7 @@ export default function BeforeLoginHomepage() {
                             <h1>MOST ProTibet Sponsorship</h1>
                         </div>
                         <div className="homepage__login">
-                            <Routes>
-                                <Route path="/login" element={<Login />} />
-                            </Routes>
+                            <Login/>
                         </div>
                     </div>
                     <img

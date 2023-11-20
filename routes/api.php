@@ -33,3 +33,13 @@ Route::get('/institutions', [InstitutionController::class, 'index']);
 Route::get('/news', [MediaController::class, 'index']);
 
 Route::get('/news/{id}', [MediaController::class, 'show']);
+
+
+
+// Login
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+    ->middleware(['guest']);
+
+// Logout
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->name('logout');

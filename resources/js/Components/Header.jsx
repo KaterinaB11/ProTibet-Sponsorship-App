@@ -1,28 +1,30 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/graphic/logo.png";
 import "../../css/Header.scss";
+import Logout from "./Logout";
 
 export default function Header() {
     return (
         <header>
             <img src={logo} alt="MOST ProTibet" width="143" height="70" />
             <nav>
-                <NavLink exact to="/home" activeClassName="active">
+                <Link to="/home" activeclassname="active">
                     Home
-                </NavLink>
-                <NavLink to="/list" activeClassName="active">
+                </Link>
+                <Link to="/list" activeclassname="active">
                     People I support
-                </NavLink>
-                <NavLink to="/news" activeClassName="active">
+                </Link>
+                <Link to="/news" activeclassname="active">
                     News
-                </NavLink>
-                <NavLink to="/faq" activeClassName="active">
+                </Link>
+                <Link to="/faq" activeclassname="active">
                     FAQ
-                </NavLink>
-                <NavLink to="/contact" activeClassName="active">
+                </Link>
+                <Link to="/contact" activeclassname="active">
                     Contact
-                </NavLink>
+                </Link>
+                <Logout/>
             </nav>
         </header>
     );

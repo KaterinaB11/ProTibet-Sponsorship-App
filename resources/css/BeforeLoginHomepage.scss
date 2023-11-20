@@ -42,8 +42,7 @@ body {
             .homepage__text {
                 display: flex;
                 flex-direction: column;
-                // text-align: left;
-                // width: 40vw;
+               
                 h1 {
                     color: rgb(188, 17, 17);
                     font-size: 6em;
@@ -54,10 +53,10 @@ body {
             }
         }
         .homepage__img {
-            width: 50vw; // Set width for the image
-            height: auto; // Maintain aspect ratio
-            border-radius: 5em; // Add border radius for rounded corners
-            box-shadow: 0 1em 2em rgba(0, 0, 0, 0.1); // Add box shadow for a subtle effect
+            width: 50vw; 
+            height: auto; 
+            border-radius: 5em; 
+            box-shadow: 0 1em 2em rgba(0, 0, 0, 0.1); 
         }
     }
 }
