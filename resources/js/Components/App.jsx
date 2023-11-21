@@ -9,6 +9,8 @@ import NewsList from "./NewsList";
 import NewsDetail from "./NewsDetail";
 import Faq from "./Faq";
 import Contact from "./Contact";
+import AdminUsers from "./Admin/AdminUsers";
+import AdminReceivers from "./Admin/AdminReceivers";
 
 export default function App() {
     return (
@@ -25,6 +27,9 @@ export default function App() {
                 <Route path="/news/:id" element={<NewsDetail />} />
                 <Route path="/faq" element={<Faq />} />
                 <Route path="/contact" element={<Contact />} />
+
+                <Route path="/admin/users" element={<AdminUsers />} />
+                {/* <Route path="/admin/receivers" element={<AdminReceivers />} /> */}
 
                 <Route path="*" element={<BeforeLoginHomepage />} />
             </Routes>

@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import "../../css/NewsList.scss";
+import UserContext from "./UserContext";
 
 
 export default function NewsList() {
+    const { user } = useContext(UserContext);
+
     const [media, setMedia] = useState([]);
 
     useEffect(() => {

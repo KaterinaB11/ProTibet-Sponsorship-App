@@ -30,7 +30,7 @@ export default function ReceiversList() {
                     return response.json();
                 })
                 .then((data) => {
-                    // Log the data to inspect the structure
+                    
 
                     // Filter receivers based on user_id
                     const userReceivers = data.receivers.filter(
