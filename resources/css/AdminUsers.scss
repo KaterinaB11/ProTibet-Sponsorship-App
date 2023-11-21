@@ -1,0 +1,35 @@
+.users-list {
+    &__filtered {
+      // Add styles for the filtered users container
+      margin-bottom: 10px; // Add any additional styles you need
+    }
+  
+    &__table {
+      // Add styles for the full list table
+      margin-top: 10px; // Add any additional styles you need
+    }
+  
+    &__heading {
+      // Add styles for the heading
+      margin-bottom: 20px; // Add any additional styles you need
+    }
+  
+    &__searchbar {
+      // Add styles for the search bar
+      margin-bottom: 20px; // Add any additional styles you need
+  
+      input {
+        // Add styles for the input field
+        padding: 5px;
+        // Add any additional styles you need
+      }
+    }
+  
+    &.hidden {
+     
+      visibility: hidden;
+      opacity: 0;
+    transition: opacity 0.5s ease; // Adjust the duration and timing function as needed
+    pointer-events: none; // Disable pointer events when hidden
+    }
+  }

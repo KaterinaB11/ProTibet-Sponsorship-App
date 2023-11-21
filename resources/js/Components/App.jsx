@@ -9,8 +9,8 @@ import NewsList from "./NewsList";
 import NewsDetail from "./NewsDetail";
 import Faq from "./Faq";
 import Contact from "./Contact";
-import AdminUsers from "./Admin/AdminUsers";
-import AdminReceivers from "./Admin/AdminReceivers";
+import AdminUsers from "./Admin/Users/AdminUsers";
+
 
 export default function App() {
     return (

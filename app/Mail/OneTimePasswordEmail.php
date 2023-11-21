@@ -9,21 +9,21 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ContactFormNotification extends Mailable
+class OneTimePasswordEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $formData;
+    public $oneTimePassword;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($formData)
+    public function __construct($formData, $oneTimePassword)
     {
-        $this->formData=$formData;
-        
+        $this->formData=$formData;    
+        $this->oneTimePassword=$oneTimePassword;
     }
-
 
     /**
      * Get the message envelope.
@@ -31,7 +31,7 @@ class ContactFormNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact Form Notification',
+            subject: 'One Time Password Email',
         );
     }
 
@@ -41,7 +41,7 @@ class ContactFormNotification extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'email.ContactFormNotification',
+            view: 'email.OneTimePasswordSend',
         );
     }
 

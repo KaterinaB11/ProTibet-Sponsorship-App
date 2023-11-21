@@ -27,8 +27,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/receivers', [ReceiverController::class, 'index']);
 
 Route::get('/users', [UserController::class, 'index']);
-// Route::get('/api/users/search', [UserController::class, 'search']);
-
 
 Route::get('/receiver/{id}', [ReceiverController::class, 'show']);
 
@@ -41,7 +39,6 @@ Route::get('/news', [MediaController::class, 'index']);
 Route::get('/news/{id}', [MediaController::class, 'show']);
 
 
-
 // Login
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
     ->middleware(['guest']);
@@ -49,6 +46,15 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
 // Logout
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
     ->name('logout');
+//Sending a message through Contac Us Form
+ Route::post('/contact', [MessageController::class, 'store']);
 
 
-    Route::post('/contact', [MessageController::class, 'store']);
+
+//-------------------------------------------------------------------------------
+//Admin displays
+Route::get('/users/search', [UserController::class, 'search']);
+   
+
+//Admin create
+Route::post('/users/create', [UserController::class, 'store']);
