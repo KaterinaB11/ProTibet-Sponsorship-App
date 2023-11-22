@@ -58,6 +58,7 @@ export default function AdminUsers() {
                         {/* Render the full list below the filtered users */}
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Receivers</th>
@@ -66,6 +67,7 @@ export default function AdminUsers() {
                         <tbody>
                             {users.map((user) => (
                                 <tr key={user.id}>
+                                    <td>{user.id}</td>
                                     <td>{user.first_name}</td>
                                     <td>{user.last_name}</td>
                                     <td>
