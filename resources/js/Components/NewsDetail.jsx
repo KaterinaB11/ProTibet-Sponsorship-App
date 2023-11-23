@@ -41,7 +41,6 @@ export default function NewsDetail({ newsItemProp }) {
                     <img
                         src={"/" + newsItem.path}
                         alt="News from India"
-                        style={{ width: "600px" }}
                     />
                     <p>{newsItem.description}</p>
                </div>

@@ -1,14 +1,8 @@
-/* Add this to your existing styles or create a new stylesheet for Contact */
 
 .contact__content {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    background-image: url("../../public/graphic/monk.svg");
-        background-repeat: no-repeat;
-        background-position: 97% 97%;
-        background-size: auto 15%;
-    
+    margin: 0 auto; 
   }
   
   .contact__heading {
@@ -29,16 +23,15 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: antiquewhite;
-    padding: 4em 10em;
+    padding: 4em;
 
 
   
   .contact__person-container {
     display: flex;
     flex-direction: column;
-    gap: 1em;
     text-align: center;
-    width: 20vw;
+    width: 25vw;
   
     h3 {
       color: rgb(188, 17, 17);
@@ -57,7 +50,7 @@
       }
   
       img {
-        width: 12vw; /* Adjust as needed */
+        width: 17vw;
         border-radius: 2em;
         margin-top: 3em;
       }
@@ -104,12 +97,12 @@
     }
   }
   
-  
-  
     .contact__form {
       text-align: center;
+      background-color: rgb(236, 220, 200);
+        padding: 2em;
       p{
-        padding: 1em 20em;
+        padding: 1em 10em;
             }
     
       h1 {
@@ -122,11 +115,6 @@
       }
     }
 
-    .contact__form{
-        background-color: rgb(236, 220, 200);
-        padding: 2em;
-    }
-  
     form {
       display: flex;
       flex-direction: column;
@@ -168,4 +156,79 @@
   color: rgb(188, 17, 17);
  }
  
+//------------------------------------------------------------------
+
+@media(max-width: 1000px){
+
+  .contact__heading {
+    padding: 2em;
+  }
   
+  .contact__people{
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2em;
+
+  .contact__person-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40vw;
+  
+  
+    .contact__person-box {
+      img {
+        width: 30vw;
+      }
+    }
+  }
+  }
+  .contact__text {
+    padding: 2em;
+  }
+  
+    .contact__form {
+      text-align: center;
+      background-color: rgb(236, 220, 200);
+        padding: 2em;
+      p{
+        padding: 2em;
+            }
+    }
+}
+
+@media(max-width: 700px){
+
+  .contact__heading {
+    padding: 1em;
+  }
+  
+  .contact__people{
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+
+  .contact__person-container {
+    flex-direction: column;
+    text-align: center;
+    width: 60vw;
+  
+  
+    .contact__person-box {
+      img {
+        width: 50vw;
+      }
+    }
+  }
+  }
+  .contact__text {
+    padding: 1em;
+  }
+  
+    .contact__form {
+        padding: 1em;
+      p{
+        padding: 1em;
+            }
+    }
+}

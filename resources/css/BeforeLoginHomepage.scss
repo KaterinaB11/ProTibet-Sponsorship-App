@@ -12,13 +12,10 @@ body {
 }
 
 .homepage {
-    // width: 100vw;
-    // height: 45vw;
-    // background: url('../../public/graphic/pozadí\ \(1200\ x\ 600\ px\).jpg');
-    // background-size: auto 60%;
+  
     background-color: antiquewhite;
     padding: 4em;
-    // margin: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,14 +37,11 @@ body {
             align-items: center;
 
             .homepage__text {
-                display: flex;
-                flex-direction: column;
-               
+                width: 40vw;
                 h1 {
                     color: rgb(188, 17, 17);
-                    font-size: 6em;
+                    font-size: 6rem;
                     font-weight: 600;
-                    // width: 70%;
                     text-align: center;
                 }
             }
@@ -61,6 +55,73 @@ body {
     }
 }
 
-.homepage__login {
+
+//--------------------------------------------------------------------
+
+@media (max-width: 1400px) {
+   
+.homepage {
     padding: 2em;
+    margin: 0;
+
+    .homepage__text-img {
+       
+        .homepage__text-login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .homepage__text {
+                width: 40vw;
+                h1 {
+                    font-size: 4rem;
+                }
+            }
+    }
+}
+}
+}
+
+@media (max-width: 1000px) {
+   
+    .homepage {
+        padding: 1em;
+        .homepage__text-img {
+            flex-direction: column;
+            img{
+                display: none;
+            }
+           
+            .homepage__text-login {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+                .homepage__text {
+                    width: 90vw;
+                    h1 {
+                        font-size: 4rem;
+                    }
+                }
+        }
+    }
+    }
+    }
+
+
+@media(max-width: 480px) {
+    .homepage {
+        .homepage__text-img {
+            .homepage__text-login {
+                .homepage__text {
+                    width: 90vw;
+                    h1 {
+                        font-size: 3rem;
+                    }
+                }
+                
+            }
+            
+        }
+    }
 }

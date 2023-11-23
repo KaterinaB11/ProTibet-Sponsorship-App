@@ -1,4 +1,3 @@
-/* Add this to your existing styles or create a new stylesheet for FAQ */
 
 .faq__heading {
     width: 100vw;
@@ -51,6 +50,17 @@
     }
   }
   
-  /* Optional: Add styling for specific elements if needed */
+//-------------------------------------------------------------
+
+@media(max-width: 1000px){
+  .faq__heading {
+    padding: 2em;
+  }
+  
+  .faq__content {
+    padding: 2em;
+    background-image: none;
+  }
+}
   
   

@@ -81,3 +81,42 @@
     padding: 20px;
   }
   
+//-------------------------------------------------------
+  @media(max-width: 700px){
+
+.receivers-list {
+  background-image: none;
+
+}
+
+.receivers-list__heading{
+  padding: 1em;
+}
+.receivers-list__table{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+
+}
+
+
+.receivers-list table {
+  width: 100vw;
+  font-size: 14px;
+}
+
+
+.receivers-list th {
+  padding: 15px;
+}
+
+.receivers-list td {
+  padding: 10px;
+}
+
+.receivers-list img {
+  width: 20vw;
+  height: auto;
+  margin-right: 0;
+}
+ }

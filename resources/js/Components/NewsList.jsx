@@ -54,7 +54,7 @@ export default function NewsList() {
                                 <img
                                     src={newsItem.path}
                                     alt="News from India"
-                                    style={{ width: "300px" }}
+                            
                                 />
                                 <h4>{new Date(newsItem.created_at).toLocaleDateString('en-GB')}</h4>
                                 <p>{newsItem.name}</p>
